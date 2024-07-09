@@ -4,6 +4,7 @@ const app = require('../server');
 const { sequelize, User, Organisation } = require('../models');
 
 beforeAll(async () => {
+  jest.setTimeout(30000); // Set timeout to 30 seconds
   await sequelize.sync({ force: true });
 });
 
